@@ -1,28 +1,23 @@
-'use client';
+import QuizCard from '@/features/quiz/components/QuizCard';
+import { getAllQuizConfigs } from '@/utils/quiz';
+import Header from '@/components/Header';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { increment, decrement } from '@/store/slices/counterSlice';
-import type { RootState } from '@/store';
-
-export default function Home() {
-  const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useDispatch();
+export default async function Home() {
+  const quizzes = await getAllQuizConfigs();
 
   return (
-    <main className="p-4">
-      <h1 className="text-2xl mb-4">Counter: {count}</h1>
-      <button
-        onClick={() => dispatch(increment())}
-        className="px-4 py-2 bg-blue-500 text-white rounded mr-2"
-      >
-        Increment
-      </button>
-      <button
-        onClick={() => dispatch(decrement())}
-        className="px-4 py-2 bg-red-500 text-white rounded"
-      >
-        Decrement
-      </button>
+    <main className="min-h-screen bg-gradient-to-br from-[#141333] via-[#543C97] to-[#6939A2]">
+      <Header isGradientBg={true} showBackButton={false} />
+      <div className="max-w-2xl mx-auto px-4 py-8 -mt-[64px] pt-[64px]">
+        <h2 className="text-[24px] leading-[28px] font-bold mb-8 text-[#FAFAFA] text-center">
+          Available Quizzes
+        </h2>
+        <div className="space-y-4">
+          {quizzes.map((quiz) => (
+            <QuizCard key={quiz.id} quiz={quiz} />
+          ))}
+        </div>
+      </div>
     </main>
   );
 }

@@ -1,19 +1,22 @@
-import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Open_Sans as OpenSans } from 'next/font/google';
 import { Providers } from './providers';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const openSans = OpenSans({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+});
 
 export const metadata: Metadata = {
-  title: 'Redux + Next.js 15 App',
-  description: a'Using Redux Toolkit in App Router setup',
+  title: 'OBRIO Quiz',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={openSans.className}>
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -1,0 +1,128 @@
+{
+  "quizId": "2",
+  "title": "Mood quiz",
+  "screens": [
+    {
+      "id": "mood",
+      "screenType": "question",
+      "question": "How are you feeling today?",
+      "answers": ["Happy", "Neutral", "Sad"],
+      "nextMap": {
+        "Happy": "dailyHabits",
+        "Neutral": "dailyHabits",
+        "Sad": "emotionalSupport"
+      }
+    },
+    {
+      "id": "dailyHabits",
+      "screenType": "question",
+      "question": "Which of these best describes your morning routine?",
+      "answers": ["Early riser", "Late sleeper", "Irregular"],
+      "next": "selfReflection"
+    },
+    {
+      "id": "emotionalSupport",
+      "screenType": "question",
+      "question": "Do you feel you have adequate emotional support?",
+      "answers": ["Yes", "No"],
+      "nextMap": {
+        "Yes": "selfReflection",
+        "No": "supportSeeking"
+      }
+    },
+    {
+      "id": "supportSeeking",
+      "screenType": "question",
+      "question": "Would you like to explore resources for emotional well-being?",
+      "answers": ["Yes, definitely", "Maybe later"],
+      "next": "selfReflection"
+    },
+    {
+      "id": "selfReflection",
+      "screenType": "question",
+      "question": "Reflecting on your day, which area do you wish to improve?",
+      "answers": ["Productivity", "Well-being", "Social connections", "Mindfulness"],
+      "next": "refinedInfo"
+    },
+    {
+      "id": "refinedInfo",
+      "screenType": "info",
+      "title": "So how does it work?",
+      "content": "Based on your responses, our AI-driven approach will provide you with tailored insights. Please answer the following question to help us understand your needs better.",
+      "nextMap": {
+        "Productivity": "productivityDetails",
+        "Well-being": "wellBeingDetails",
+        "Social connections": "socialDetails",
+        "Mindfulness": "mindfulnessDetails"
+      }
+    },
+    {
+      "id": "productivityDetails",
+      "screenType": "question",
+      "question": "What productivity challenge do you face most?",
+      "answers": [
+        "Procrastination",
+        "Lack of motivation",
+        "Time management",
+        "Too many distractions"
+      ],
+      "next": "referral"
+    },
+    {
+      "id": "wellBeingDetails",
+      "screenType": "question",
+      "question": "Which aspect of well-being do you want to improve?",
+      "answers": ["Physical health", "Mental health", "Sleep quality", "Stress management"],
+      "next": "referral"
+    },
+    {
+      "id": "socialDetails",
+      "screenType": "question",
+      "question": "What's your biggest challenge in social interactions?",
+      "answers": [
+        "Initiating conversations",
+        "Maintaining relationships",
+        "Networking",
+        "Confidence issues"
+      ],
+      "next": "referral"
+    },
+    {
+      "id": "mindfulnessDetails",
+      "screenType": "question",
+      "question": "What aspect of mindfulness are you most interested in?",
+      "answers": ["Meditation", "Mindful eating", "Stress reduction", "Awareness practices"],
+      "next": "referral"
+    },
+    {
+      "id": "referral",
+      "screenType": "question",
+      "question": "Where did you hear about us?",
+      "answers": [
+        "Poster or Billboard",
+        "Friend or Family",
+        "Instagram",
+        "Direct Mail or Package Insert",
+        "Online TV or Streaming TV",
+        "TV",
+        "Radio",
+        "Search Engine (Google, Bing, etc.)",
+        "Newspaper or Magazine",
+        "Facebook",
+        "Blog Post or Website Review",
+        "Podcast",
+        "Influencer",
+        "YouTube",
+        "Pinterest",
+        "Other"
+      ],
+      "next": "summary"
+    },
+    {
+      "id": "summary",
+      "screenType": "summary",
+      "content": "Thank you for your insights. Review your responses and get personalized recommendations tailored to your needs.",
+      "next": null
+    }
+  ]
+}
