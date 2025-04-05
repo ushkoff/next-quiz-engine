@@ -1,6 +1,8 @@
-# Quiz Application!
+# Next Quiz Engine
 
 ![Quiz Application Preview](/public/preview.png)
+
+A dynamic, config-driven quiz engine built with Next.js 15, TypeScript and Redux Toolkit. Supports static generation, flexible screen types, and user state management.
 
 ## Getting Started
 
